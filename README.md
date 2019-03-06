@@ -1,5 +1,5 @@
 # sshd+systemd container
-Derived from ideas from @apo, online resources, and @jdeathe. This README is a WIP
+Derived from ideas from @apo, online resources, and @jdeathe. This README is a WIP. The work in <repo>/apo is @apo's original work. The work in <jimconn> is my original work.
 
 # build
 docker-compose build cnct-ci
