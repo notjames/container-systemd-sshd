@@ -1,0 +1,22 @@
+#!/usr/bin/env bash
+
+readonly BIN="/usr/sbin/sshd"
+readonly LOCK_FILE="/var/lock/subsys/sshd-bootstrap"
+readonly NICE="/bin/nice"
+readonly NICENESS="10"
+readonly OPTIONS="
+ -D
+ -e
+ -u 0
+"
+
+while true
+do
+	sleep 0.1
+	[[ -e ${LOCK_FILE} ]] || break
+done
+
+exec ${NICE} \
+	-n ${NICENESS} \
+	${BIN} \
+	${OPTIONS}

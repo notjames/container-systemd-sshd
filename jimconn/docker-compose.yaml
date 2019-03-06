@@ -1,0 +1,18 @@
+version: '2'
+services:
+  cnct-ci:
+    build:
+      context: .
+    cap_add:
+      - SYS_ADMIN
+    security_opt:
+      - seccomp:unconfined
+    volumes:
+      - /sys/fs/cgroup:/sys/fs/cgroup:ro
+    ports:
+      - "22:22"
+    networks:
+      - "cnct-ci"
+networks:
+  cnct-ci:
+    external: true
